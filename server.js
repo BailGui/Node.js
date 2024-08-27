@@ -6,5 +6,6 @@ const Http = require('http');
 Http.createServer(function(request, response){
     // création de l'entête qui renvoie notamment le code HTTP
     response.writeHead(200);
+    // fin de la réponse avec un message 
     response.end('Hello World NodeJS !');
 }).listen(8888);
