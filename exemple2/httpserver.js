@@ -1,5 +1,7 @@
 /* on importe le module standard http qui va gérer ce protocole */
 const Http = require('http');
+
+function demarrageServeur(){
 /* on indique le port d'écoute */
 const port = 8888;
 var monServeur;
@@ -23,3 +25,7 @@ console.log("Démarrage du serveur sur le port" + port);
         // fin de la réponse avec un message 
         response.end();
     }
+}
+
+/* on exporte la fonction demarrageServeur() et je lui attribue un nom de méthode : demarrer */
+exports.demarrer = demarrageServeur;
