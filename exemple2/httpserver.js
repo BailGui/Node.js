@@ -27,5 +27,11 @@ console.log("Démarrage du serveur sur le port" + port);
     }
 }
 
+function test() {
+    console.log('Ceci est un test');
+}
+
 /* on exporte la fonction demarrageServeur() et je lui attribue un nom de méthode : demarrer */
 exports.demarrer = demarrageServeur;
+
+exports.tester = test;
