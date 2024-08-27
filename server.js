@@ -7,5 +7,5 @@ Http.createServer(function(request, response){
     // création de l'entête qui renvoie notamment le code HTTP
     response.writeHead(200);
     // fin de la réponse avec un message 
-    response.end('Hello World NodeJS !');
+    response.end('Bonjour, je suis le serveur Node.JS');
 }).listen(8888);
