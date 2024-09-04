@@ -14,5 +14,5 @@ app.get('/', function(requete, response){
     response.end();
 });
 
-app.listen(8000);  // le serveur web écoute sur le port 8080
+app.listen(8080);  // le serveur web écoute sur le port 8080
 console.log("Express est démarré et attend votre requête...")
