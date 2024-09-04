@@ -19,7 +19,6 @@ app.use(function(requete,response,next){
     response.setHeader('Content-Type', 'text/plain');
     response.status(404).send('Page introuvable !');
     response.end();
-
 });
 
 app.listen(8080);  // le serveur web écoute sur le port 8080
