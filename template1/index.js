@@ -11,33 +11,26 @@ app.get('/', function(requete,response){
 
 // définir une route vers la page contact
 app.get('/contacts', function(requete,response){
-   response.render('contact.js');
+   response.render('contact.ejs');
 });
 
 // définir une route dynamique
 app.get('/page=:numero', function(requete,response){
-    const monParametre = requete.params.numero;
     // je récupère la valeur de mon paramètre passé dans l'URL
     let numeropage = requete.params.numero;
-
-    // définir l'entête HTTP avec son type MIME
-    response.setHeader('Content-Type', 'text/plain');
-
     // je vérifie que la valeur transmise est acceptable
     // exemple : on suppose qu'on accepte uniquement des valeurs entières de 1 à 5
     // si oui, j'affiche. Si non, je l'indique par une erreur 
-    if (Number.isInteger(Number(monParametre)) && ((monParametre>0 && monParametre<=5))){
-        response.write("Ceci est la page numéro" + monParametre);
-        // OU BIEN response.write(`Ceci est la page n°${monParametre}`);
-        response.end();
+    if (Number.isInteger(Number(numeropage)) && ((numeropage>0 && numeropage<=5))){
+        response.render('page.ejs', {num:numeropage});
     } else {
-        response.status(404).send("La valeur de numero n'est pas autorisée !");
+        response.status(404).render('404.ejs', {msg:"ce numéro de page n'est pas valide"});
     }
 });
 
 // définir une "page" gérant l'erreur 404 
 app.use(function(requete,response,next){
-    response.status(404).render('404.js');
+    response.status(404).render('404.ejs',{msg:"La page demandée n'existe pas"});
 });
 
 app.listen(8080);  // le serveur web écoute sur le port 8080
