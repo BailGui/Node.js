@@ -7,5 +7,7 @@
   </head>
   <body>
     <h1>Ceci est la page <%= num %></h1>
+    <%- include('menu.ejs'); -%>
+    <a href="/page=<%= Number(num)+1 %>">Page suivante</a>
   </body>
 </html>
