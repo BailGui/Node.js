@@ -31,7 +31,7 @@ app.get('/page=:numero', function(requete,response){
     // définir l'entête HTTP avec son type MIME
     response.setHeader('Content-Type', 'text/plain');
     // définir le texte à afficher
-    response.write(``);
+    response.write(`Ceci est la page numéro ${numeropage}`);
     // signifier la fin de la réponse pour qu'elle soit envoyée
     response.end();
 });
