@@ -6,22 +6,12 @@ const app = express();
 
 // définir une route vers la page d'accueil (la racine du site)
 app.get('/', function(requete,response){
-    // définir l'entête HTTP avec son type MIME
-    response.setHeader('Content-Type', 'text/plain');
-    // définir le texte à afficher
-    response.write("Hello world : Express, vous êtes sur la page d'accueil");
-    // signifier la fin de la réponse pour qu'elle soit envoyée
-    response.end();
+    response.render('accueil.ejs');
 });
 
 // définir une route vers la page contact
-app.get('/contact', function(requete,response){
-    // définir l'entête HTTP avec son type MIME
-    response.setHeader('Content-Type', 'text/plain');
-    // définir le texte à afficher
-    response.write("Vous êtes sur la page contact");
-    // signifier la fin de la réponse pour qu'elle soit envoyée
-    response.end();
+app.get('/contacts', function(requete,response){
+   response.render('contact.js');
 });
 
 // définir une route dynamique
@@ -47,9 +37,7 @@ app.get('/page=:numero', function(requete,response){
 
 // définir une "page" gérant l'erreur 404 
 app.use(function(requete,response,next){
-    response.setHeader('Content-Type', 'text/plain');
-    response.status(404).send('Page introuvable !');
-    response.end();
+    response.status(404).render('404.js');
 });
 
 app.listen(8080);  // le serveur web écoute sur le port 8080
