@@ -4,6 +4,13 @@ const express = require('express');
 // créer un application 
 const app = express();
 
+// Ajouter le package "morgan" pour faire du logging
+const morgan = require("morgan");
+
+// Utiliser morgan pour le log
+app.use(morgan("LOG :date[web] | User-Agent=:user-agent | URL demandée = :url | Status=:status"));
+
+
 // définir une route vers la page d'accueil (la racine du site)
 app.get('/', function(requete,response){
     response.render('accueil.ejs');
