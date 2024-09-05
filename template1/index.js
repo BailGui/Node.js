@@ -18,6 +18,7 @@ app.get('/contacts', function(requete,response){
 app.get('/page=:numero', function(requete,response){
     // je récupère la valeur de mon paramètre passé dans l'URL
     let numeropage = requete.params.numero;
+    
     // je vérifie que la valeur transmise est acceptable
     // exemple : on suppose qu'on accepte uniquement des valeurs entières de 1 à 5
     // si oui, j'affiche. Si non, je l'indique par une erreur 
