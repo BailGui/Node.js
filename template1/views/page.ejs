@@ -6,8 +6,26 @@
     <title>Page <%= num %></title>
   </head>
   <body>
-    <h1>Ceci est la page <%= num %></h1>
-    <%- include('menu.ejs'); -%>
-    <a href="/page=<%= Number(num)+1 %>">Page suivante</a>
+    <main style="width: 640px; margin: 0 auto">
+      <h1 style="text-align: center">Ceci est la page <%= num %></h1>
+      <div style="float: left">
+        <% if (Number(num) > 1) { %>
+        <p>
+          Consulter la page <a href="/page=<%= Number(num)-1 %>">précédente</a>
+        </p>
+        <% } else { %>
+        <p>Pas de page précédente</p>
+        <% } %>
+      </div>
+      <div style="float: right">
+        <% if ((Number(num) >= 1) && (Number(num) < 10)) { %>
+        <p>
+          Consulter la page <a href="/page=<%= Number(num)+1 %>">suivante</a>
+        </p>
+        <% } else { %>
+        <p>Pas de page suivante</p>
+        <% } %>
+      </div>
+    </main>
   </body>
 </html>
