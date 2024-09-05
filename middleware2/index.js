@@ -7,6 +7,10 @@ const app = express();
 // Ajouter le package "morgan" pour faire du logging
 const morgan = require("morgan");
 
+// Définition du répertoire public contenant les ressources externes (img, CSS, JS,...)
+const path = require('path');
+app.use(express.static(path.join(__dirname,'public')));
+
 // Utiliser morgan pour le log
 app.use(morgan("LOG :date[web] | User-Agent=:user-agent | URL demandée = :url | Status=:status"));
 
