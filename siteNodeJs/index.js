@@ -56,7 +56,7 @@ app.get('/404', function(requete,response){
 
 // définir une "page" gérant l'erreur 404 
 app.use(function(requete,response,next){
-    response.status(404).render('404.ejs',{msg:"La page demandée n'existe pas"});
+    response.status(404).render('page-404.ejs',{msg:"La page demandée n'existe pas"});
 });
 
 app.listen(8080);  // le serveur web écoute sur le port 8080
