@@ -1,0 +1,18 @@
+<%- include('inc/banniere.ejs'); -%>
+            <%- include('inc/menu.ejs'); -%>
+            <main>
+    <h1><%= title %></h1>
+
+    <p class="entete">Bonjour, <%= nom %> <%= prenom %></p>
+    <p class="entete"><%= ville %></p>
+    <p class="entete"><%= email %></p>
+    <p class="entete">Nous avons bien reçu votre message, merci!</p>
+    <p class="entete">Votre message:</p>
+    <p class="entete"><%= msg %></strong>
+    <br />
+    <p class="entete"><a href="/">Retour à l'accueil</a></p>
+    <p class="entete"><a href="/contact">Envoyer un autre message</a></p>
+  </main>
+</div>
+</body>
+</html>

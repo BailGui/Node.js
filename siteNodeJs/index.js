@@ -44,10 +44,24 @@ app.get('/histoire', function(requete,response){
     response.render('histoire.ejs');
 });
 
+
 // définir une route vers la page liens
 app.get('/liens', function(requete,response){
     response.render('liens.ejs');
 });
+
+var urlEncodedParser = express.urlencoded({extended: false});
+
+app.post('/traitement', urlEncodedParser, function(req, res, next) {
+    let lenom = req.body.nom; 
+    let leprenom = req.body.prenom;
+    let laville = req.body.ville;
+    let lemail = req.body.email;
+    let lemessage = req.body.message;
+
+    
+    res.render('traiter_form.ejs', { title: 'Formulaire de traitement', nom:lenom , prenom:leprenom, ville:laville, email:lemail, msg:lemessage,  });
+  });
 
 // définir une route vers la page 404
 app.get('/404', function(requete,response){
