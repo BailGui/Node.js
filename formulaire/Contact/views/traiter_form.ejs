@@ -3,7 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Traitement du formulaire</title>
+    <title><%= titre %></title>
   </head>
-  <body></body>
+  <body>
+    <h1><%= titre %></h1>
+
+    <p>Bonjour, <%= nom %></p>
+    <p>Nous avons bien reçu votre message, merci!</p>
+    <p>Votre message:</p>
+    <strong><%= msg %></strong>
+    <br />
+    <p><a href="/">Retour à l'accueil</a></p>
+    <p><a href="/contact">Envoyer un autre message</a></p>
+  </body>
 </html>
