@@ -13,3 +13,9 @@ const connection = mysql.createConnection({
     name: dbConfig.DB_NAME,
     port: dbConfig.DB_PORT
 })
+
+// Connexion 
+connection.connect(function(error){
+    if (error) throw error;
+    console.log("Connecté avec succès à la base de données");
+})
