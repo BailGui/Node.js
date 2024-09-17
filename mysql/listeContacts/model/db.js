@@ -21,4 +21,5 @@ connection.connect(function(error){
     console.log("Connecté avec succès à la base de données");
 });
 
+// on exporte ce module de connexion pour les autres parties de l'application
 module.exports = connection;
