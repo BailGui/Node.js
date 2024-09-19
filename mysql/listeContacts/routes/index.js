@@ -1,14 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-})
+const root = require('../controllers/root.controller');
 
-  .get('/contact', function (req, res) {
-    res.render('formulaire', { title: "BailGui was here" })
-  })
+/* GET home page. */
+router.get('/', root.home);
+
+router.get('/contact', root.contact);
 
 
 
