@@ -15,7 +15,7 @@
                 <th><%= donnees[i].id %></th>
                 <th><%= donnees[i].nom %></th>
                 <th><%= donnees[i].message %></th>
-                <th><%= donnees[i].datemessage %></th>
+                <th><%= moment(donnees[i].datemessage).format('DD MMMM YYYY HH:mm:ss') %></th>
             </tr>
 
         <% } %>

@@ -3,6 +3,9 @@ var router = express.Router();
 
 const Message = require('../models/message.model.js');
 
+// import du module 'moment.js"
+var moment = require('moment');
+
 /* Toutes les routers décrites dans ce fichier correspandent à des URL commençant par : localhost:8080/messages/...   */
 
 // route pour l'URL : localhost:8080/messages/
@@ -17,7 +20,8 @@ router.get('/', (req, res) => {
         } else {
             console.log('Data : ', data);
             const titrePage = "Liste de messages";
-            res.render('listeMessages', { title: titrePage, donnees: data });
+            moment.locale('fr'); // pour transformer les dates et heures en français
+            res.render('listeMessages', { title: titrePage, donnees: data, moment: moment });
         }
     });
 
