@@ -8,19 +8,19 @@ const Message = require('../models/message.model.js');
 // route pour l'URL : localhost:8080/messages/
 router.get('/', (req, res) => {
     console.log('GET /messages/ pour lire tous les messages');
-    /*    
-        Message.readAll(function(err, data) {
-            if (err) {
-                res.status(500).send({
-                    message: 'Erreur pendant la lecture de tous les messages'
-                });
-            }else {
-                console.log('Data : ', data);
-                const titrePage = "Liste de messages";
-                res.render('listeMessages', {titre: titrePage, donnees: data });
-            }
-        });
-    */
+
+    Message.readAll((err, data) => {
+        if (err) {
+            res.status(500).send({
+                message: 'Erreur pendant la lecture de tous les messages'
+            });
+        } else {
+            console.log('Data : ', data);
+            const titrePage = "Liste de messages";
+            res.render('listeMessages', { title: titrePage, donnees: data });
+        }
+    });
+
 });
 
 router.post('/create', (req, res) => {
