@@ -1,0 +1,29 @@
+<%- include('header.ejs') -%>
+
+<main>
+        <% if (donnees.length) { %>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>nom</th>
+                <th>messages</th>
+                <th>date</th>
+                </tr>
+        
+        <% for(var i=0; i<donnees.length; i++) { %>
+            <tr>
+                <th><%= donnees[i].id %></th>
+                <th><%= donnees[i].nom %></th>
+                <th><%= donnees[i].message %></th>
+                <th><%= moment(donnees[i].datemessage).format('DD MMMM YYYY HH:mm:ss') %></th>
+            </tr>
+
+        <% } %>
+    </table>
+    <% } %>
+    <% if (donnees.length) { %>
+        <p>Pad de messages actuellement !</p>
+        <% } %>
+</main>
+
+<%- include('footer.ejs') -%>
