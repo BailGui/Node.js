@@ -1,0 +1,19 @@
+<%- include('header.ejs') -%>
+
+<main>
+        <% if (donnees.length) { %>
+        <% for(var i=0; i<donnees.length; i++) { %>
+            <article>
+                <p>Envoyé par <%= donnees[i].nom %>, <%= moment(donnees[i].datemessage).format('[le] DD MMMM YY [à] HH:mm:ss') %></p>
+                <p><em><% donnees[i].message %></em></p>
+            </article>
+
+        <% } %>
+    <% } %>
+
+    <% if (donnees.length) { %>
+        <p>Pas de messages actuellement !</p>
+        <% } %>
+</main>
+
+<%- include('footer.ejs') -%>

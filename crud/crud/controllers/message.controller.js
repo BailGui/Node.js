@@ -56,3 +56,8 @@ exports.readAll = (req, res) => {
     });
 };
 
+
+// Création des messages
+exports.newmsg = (req, res) => {
+    console.log("Afficher les nouveaux messages")
+}
