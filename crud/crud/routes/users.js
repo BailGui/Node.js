@@ -13,4 +13,13 @@ router.get('/register', user.registerform);
 // Sauvegarder les données d'enregistrement du nouvel utilisateur 
 router.post('/register', users.register);
 
+// Affichage du formulaire de connexion 
+router.get('/login', users.loginform);
+
+// Connexion de l'utilisateur 
+router.post('/login', users.login);
+
+// Déconnexion de l'utilisateur 
+router.get('/logout', users.logout);
+
 module.exports = router;
