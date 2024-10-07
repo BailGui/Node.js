@@ -1,0 +1,19 @@
+<%- include('header.ejs') -%>
+
+<main>
+    <h1><%= title %></h1>
+    <form action="" method="post">
+        <label for="nom">nom:</label>
+        <input type="text" name="nom" id="nom" required autofocus>
+        <br>
+        <label for="">email:</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="">mot de passe:</label>
+        <input type="password" name="motdepasse" id="motdepasse" required>
+        <br>
+        <input type="submit" value="s'enregistrer">
+    </form>
+</main>
+
+<%- include('footer.ejs') -%>
