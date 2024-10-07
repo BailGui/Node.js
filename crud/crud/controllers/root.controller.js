@@ -1,16 +1,19 @@
-console.log('On passe dans controllers/root.controller.js')
+console.log('On passe dans controllers/root.controller.js');
 
-exports.home = (req, res, next) => {
-    res.render('index', { titre: 'Express' });
+// Méthode pour gérer la page d'accueil 
+exports.home = (req,res,next) => {
+    res.render('index', {title: 'Express'});
 };
 
-exports.form = (req, res, next) => {
-    res.render('contact_form', { titre: "Contact" });
-};
+// Méthode pour afficher le formulaire de contact 
+exports.form = (req,res,next) => {
+    res.render('contact_form',{title:"Formulaire de contact"});
+}
 
-exports.traitement = (req, res, next) => {
+// Méthode pour confirmer que le message est reçu
+exports.traitement = (req,res,next) => {
     let lenom = req.body.nom;
     let lemessage = req.body.msg;
 
-    res.render('traiter_form', { titre: "formulaire reçu", nom: lenom, msg: lemessage });
+    res.render('traiter_form', {title:"Formulaire reçu", nom: lenom, msg: lemessage});
 };
